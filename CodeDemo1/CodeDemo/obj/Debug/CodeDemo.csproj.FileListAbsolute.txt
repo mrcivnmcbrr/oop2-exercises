@@ -1,0 +1,10 @@
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\CodeDemo\CodeDemo\bin\Debug\CodeDemo.exe.config
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\CodeDemo\CodeDemo\bin\Debug\CodeDemo.exe
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\CodeDemo\CodeDemo\bin\Debug\CodeDemo.pdb
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\CodeDemo\CodeDemo\obj\Debug\CodeDemo.csprojResolveAssemblyReference.cache
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\CodeDemo\CodeDemo\obj\Debug\CodeDemo.frmHome.resources
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\CodeDemo\CodeDemo\obj\Debug\CodeDemo.Properties.Resources.resources
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\CodeDemo\CodeDemo\obj\Debug\CodeDemo.csproj.GenerateResource.Cache
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\CodeDemo\CodeDemo\obj\Debug\CodeDemo.exe
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\CodeDemo\CodeDemo\obj\Debug\CodeDemo.pdb
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\CodeDemo\CodeDemo\obj\Debug\CodeDemo.frmRegistration2.resources

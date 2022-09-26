@@ -1,0 +1,12 @@
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\GradingApp\GradingApp\bin\Debug\GradingApp.exe.config
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\GradingApp\GradingApp\bin\Debug\GradingApp.exe
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\GradingApp\GradingApp\bin\Debug\GradingApp.pdb
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\GradingApp\GradingApp\obj\Debug\GradingApp.csprojResolveAssemblyReference.cache
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\GradingApp\GradingApp\obj\Debug\GradingApp.frmGrade.resources
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\GradingApp\GradingApp\obj\Debug\GradingApp.Properties.Resources.resources
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\GradingApp\GradingApp\obj\Debug\GradingApp.csproj.GenerateResource.Cache
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\GradingApp\GradingApp\obj\Debug\GradingApp.exe
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\GradingApp\GradingApp\obj\Debug\GradingApp.pdb
+C:\Users\User\Desktop\School Thing\2nd year\2nd Sem\IT205\Programs\CodeDemo3-GradingApp\GradingApp\bin\Debug\GradingApp.exe.config
+C:\Users\User\Desktop\School Thing\2nd year\2nd Sem\IT205\Programs\CodeDemo3-GradingApp\GradingApp\obj\Debug\GradingApp.exe
+C:\Users\User\Desktop\School Thing\2nd year\2nd Sem\IT205\Programs\CodeDemo3-GradingApp\GradingApp\obj\Debug\GradingApp.pdb
