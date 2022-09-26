@@ -1,0 +1,451 @@
+**need i-type lahat ng public void para di mag error**
+FORM 1 Code: 
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace LabExercise5
+{
+    public partial class Library : Form
+    {
+        DataTable libTable;
+        public Library()
+        {
+            InitializeComponent();
+        }
+
+        
+
+        private void dtTransaction_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+        
+        public void dtBooksTransaction()
+        {
+            try
+            {
+                //Return Login
+                string current, bookR;
+                current = DateTime.Today.ToShortDateString();
+                bookR = dtreturn.Value.Date.ToShortDateString();
+
+                //Same Day is not allowed
+
+                if (current == bookR)
+                {
+                    MessageBox.Show("Same Current and return is not allowed, Please try again");
+                    return;
+                }
+
+                Random generator = new Random();
+                String r = generator.Next(0, 999999).ToString("D6");
+
+                //Rows
+                dtTransaction.Rows.Add("Borrowed", r, txtborrower.Text, txtID.Text, cbCourse.Text, txtpurpose.Text, txttitle.Text,
+                    txtbookid.Text, txtauthor.Text, DateTime.Today.ToShortDateString(), dtreturn.Value.Date.ToShortDateString());
+                dtTransaction.DataSource = libTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtBooksDummy()
+        {
+             libTable = new DataTable();
+
+            //Columns
+            libTable.Columns.Add("BookID", typeof(int));
+            libTable.Columns.Add("Title", typeof(string));
+            libTable.Columns.Add("Author", typeof(string));
+            libTable.Columns.Add("Subject", typeof(string));
+            libTable.Columns.Add("PublishedDate", typeof(string));
+            libTable.Columns.Add("Quantity", typeof(int));
+            libTable.Columns.Add("Picture");
+
+            //Rows
+            libTable.Rows.Add(1288, "Physical Fitness", "Jason Tatum", "Health", "08/18/2016", 6, "CProg.jpg");
+            libTable.Rows.Add(1237, "Financial Mangement", "Kyrie Irving", "Accounting", "12/02/2018", 7, "Fin1.jpg");
+            libTable.Rows.Add(1236, "Basic Networking", "Bill Russel", "Computer", "06/22/2015", 9);
+            libTable.Rows.Add(1235, "Principles of Management", "Kyrie Irving", "Management", "12/02/2018", 7);
+            libTable.Rows.Add(1239, "Marketing 101", "James Harden", "Management", "12/19/2011", 7);
+            libTable.Rows.Add(1234, "Fundamental to C# Programming", "Bill Russel", "Computer", "06/22/2015", 9);
+            libTable.Rows.Add(1240, "To Engineer is Human", "LeBron James", "Engineering", "12/26/2015", 5);
+            libTable.Rows.Add(1241, "Theory of Machines", "Damian Lillard", "Engineering", "01/21/2014", 5);
+
+            dtBooks.DataSource = libTable;
+        }
+
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lbltime.Text = "About to Logout";
+            timer1.Enabled = false;
+
+            if (MessageBox.Show("Are you sure you want to close?", "Library", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                lbltime.Text = "Library System Resuming...";
+                timer1.Enabled = true;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbltime.Text = "Date Today " + DateTime.Now.ToString();
+        }
+
+        private void addBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //pnAdbook.Visible.True = true;
+        }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
+            dtBooksDummy();
+            lblbook.Visible = true;
+            libCount(null);
+        }
+
+        private void libCount(string subject)
+        {
+            if(subject == null)
+            {
+                lblbook.Text = "Total Number of distinct Books: " +
+                    dtBooks.Rows.Count.ToString();
+            }
+            else
+            {
+                lblbook.Text = "Total Number of distinct Books for " + subject + ": " + dtBooks.Rows.Count.ToString();
+            }
+        }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = libTable.DefaultView;
+            dv.RowFilter = "Title LIKE '" + txtsearch.Text + "%'";
+            dtBooks.DataSource = dv;
+        }
+
+        private void onlineSearchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Web frm2 = new Web();
+            frm2.Show();
+                this.Hide();
+        }
+
+        private void searchBySubject(string subject)
+        {
+            DataView dv = libTable.DefaultView;
+            dv.RowFilter = "Subject LIKE '" + subject + "%'";
+            dtBooks.DataSource = dv;
+        }
+
+        private void gbSubject_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdIT_CheckedChanged(object sender, EventArgs e)
+        {
+            string subject = "Computer";
+            if(rdIT.Checked == true)
+            {
+                searchBySubject(subject);
+                libCount(subject);
+            }
+        }
+
+        private void rdAct_CheckedChanged(object sender, EventArgs e)
+        {
+            string subject = "Accounting";
+            if(rdAct.Checked == true)
+            {
+                searchBySubject(subject);
+                libCount(subject);
+            }
+        }
+
+        private void rdMgt_CheckedChanged(object sender, EventArgs e)
+        {
+            string subject = "Management";
+            if(rdMgt.Checked == true)
+            {
+                searchBySubject(subject);
+                libCount(subject);
+            }
+        }
+
+        private void rdHtl_CheckedChanged(object sender, EventArgs e)
+        {
+            string subject = "Health";
+            if(rdHtl.Checked == true)
+            {
+                searchBySubject(subject);
+                libCount(subject);
+            }
+        }
+
+        private void rdEng_CheckedChanged(object sender, EventArgs e)
+        {
+            string subject = "Engineering";
+            if(rdEng.Checked == true)
+            {
+                searchBySubject(subject);
+                libCount(subject);
+            }
+        }
+
+        private void rdAll_CheckedChanged(object sender, EventArgs e)
+        {
+            dtBooksDummy();
+            libCount(null);
+        }
+
+        private void dtBooks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                BookDTL book = new BookDTL();
+                string imageName = dtBooks.CurrentRow.Cells[6].Value.ToString();
+                Image img;
+                img = Image.FromFile(@"V:\Products\" + imageName);
+                book.txtbookid.Text = this.dtBooks.CurrentRow.Cells[0].Value.ToString();
+                book.pnBook.Image = img;
+                book.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("File not found! , " + ex.Message);
+            }
+        }
+
+        private void dtBooks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtbookid.Text = dtBooks.CurrentRow.Cells[0].Value.ToString();
+            txttitle.Text = dtBooks.CurrentRow.Cells[1].Value.ToString();
+            txtauthor.Text = dtBooks.CurrentRow.Cells[2].Value.ToString();
+        }
+
+        private void btnproceed_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dtBooksTransaction();
+
+                string qty = dtBooks.CurrentRow.Cells[5].Value.ToString();
+                int Total;
+
+                Total = Convert.ToInt32(qty) - 1;
+            }
+            catch (NullReferenceException men)
+            {
+                MessageBox.Show(men.Message);
+            }
+
+        }
+
+        private void returnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BookRtn returnB = new BookRtn();
+                returnB.txtTranID.Text = this.dtTransaction.CurrentRow.Cells[1].Value.ToString();
+                returnB.txtBookID.Text = this.dtTransaction.CurrentRow.Cells[7].Value.ToString();
+                returnB.txtbookName.Text = this.dtTransaction.CurrentRow.Cells[6].Value.ToString();
+                returnB.txtauthor.Text = this.dtTransaction.CurrentRow.Cells[4].Value.ToString();
+                returnB.txtbName.Text = this.dtTransaction.CurrentRow.Cells[2].Value.ToString();
+                returnB.txtreturnDate.Text = this.dtTransaction.CurrentRow.Cells[10].Value.ToString();
+                returnB.ShowDialog();
+                this.Close();
+            }
+            catch (NullReferenceException yoru)
+            {
+                MessageBox.Show(yoru.Message);
+            }
+        }
+
+        private void dtPenalties_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+       
+    }
+}
+
+
+FORM 2 Code:
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace LabExercise5
+{
+    public partial class Web : Form
+    {
+        public Web()
+        {
+            InitializeComponent();
+        }
+
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmSearchEngines_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hOMEToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Are you sure want to exit?", "Libary", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Library lib = new Library();
+                lib.Show();
+                this.Hide();
+            }
+        }
+
+        private void btnGo_Click(object sender, EventArgs e)
+        {
+            wbLibrary.Navigate(cbSearch.Text);
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            wbLibrary.GoHome();
+        }
+
+        private void btnForward_Click(object sender, EventArgs e)
+        {
+            if (wbLibrary.CanGoForward)
+            {
+                wbLibrary.GoForward();
+            }
+               
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            if(wbLibrary.CanGoBack)
+            {
+                wbLibrary.GoBack();
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            wbLibrary.ShowPrintPreviewDialog();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            wbLibrary.Refresh();
+        }
+    }
+}
+
+
+FORM 3 Code:
+* nasa form 1 yung code niya * 
+
+
+FORM 4 Code: 
+**may error sa dtreturn.Value**
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace LabExercise5
+{
+    public partial class BookRtn : Form
+    {
+        public BookRtn()
+        {
+            InitializeComponent();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnreturn_Click(object sender, EventArgs e)
+        {
+            string bookReturn, BactualReturn;
+            const double penalty = 500.00;
+            double totalPenalty;
+            bookReturn = txtreturnDate.Text;
+            BactualReturn = dtReturn.Value.Date.ToShortDateString();
+
+            Library lib = new Library();
+
+            TimeSpan ts = Convert.ToDateTime(BactualReturn) - Convert.ToDateTime(bookReturn);
+
+            //Number of Days Diff
+            int results = Convert.ToInt32(ts.TotalDays);
+            totalPenalty = penalty * results;
+
+            if (bookReturn == BactualReturn && results == 0)
+            {
+                lblpenalty.Visible = true;
+                lblpenalty.Text = "No Penalty Fees!";
+                foreach (DataGridViewRow item in lib.dtTransaction.SelectedRows)
+                {
+                    lib.dtTransaction.Rows.RemoveAt(item.Index);
+                }
+
+                lib.dtPenalties.Rows.Add(txtTranID.Text, cbStatus.Text, dtReturn.Value.ToString(), totalPenalty.ToString(), txtBookID.Text, txtbName.Text);
+                lib.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please pay " + totalPenalty + " for the penalty");
+                lib.dtPenalties.Rows.Add(txtTranID.Text, cbStatus.Text, dtReturn.Value.ToString(), totalPenalty.ToString(), txtBookID.Text, txtbName.Text);
+                lib.ShowDialog();
+                this.Close();
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}

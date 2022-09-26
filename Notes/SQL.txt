@@ -1,0 +1,149 @@
+CREATE DATABASE BedaEnrollment
+GO
+
+--USE BedaEnrollment
+--GO
+
+CREATE TABLE tbl_students
+(
+StudentID INT IDENTITY(1,1) PRIMARY KEY,
+FirstName VARCHAR(100) NOT NULL,
+LastName VARCHAR(100) NOT NULL,
+MiddleName VARCHAR(100) NOT NULL,
+GovernmentIDName VARCHAR(50) NOT NULL,
+GovernmentID VARCHAR(100) NOT NULL,
+DateCreated DATETIME DEFAULT GETDATE(), 
+Age INT,
+UNIQUE (GovernmentID),
+CHECK (Age >=18)
+)
+GO
+
+INSERT INTO tbl_students(FirstName, LastName, MiddleName, GovernmentIDName, GovernmentID, Age)
+VALUES ('Danny', 'Green', 'Durant', 'SSSID', '647445533', 36)
+INSERT INTO tbl_students(FirstName, LastName, MiddleName, GovernmentIDName, GovernmentID, Age)
+VALUES ('LeBron', 'Harden', 'Narciso', 'Drivers License', '76662533', 35)
+INSERT INTO tbl_students(FirstName, LastName, MiddleName, GovernmentIDName, GovernmentID, Age)
+VALUES ('Kevin', 'Harden', 'Durant', 'SSSID', '647472533', 32)
+GO
+
+
+ALTER TABLE tbl_students Add CreatedBy VARCHAR(100) DEFAULT SUSER_SNAME()
+GO
+
+CREATE TABLE tbl_enrollment
+(
+EnrollmentID INT IDENTITY(1,1) PRIMARY KEY,
+StudentID INT NOT NULL, 
+EnrolledDate DATETIME DEFAULT GETDATE(),
+Payment money NOT NULL,
+CHECK (Payment != 0)
+)
+GO
+
+ALTER TABLE tbl_enrollment
+ADD FOREIGN KEY (StudentID) REFERENCES tbl_students(StudentID);
+
+INSERT INTO tbl_enrollment(StudentID, Payment)
+VALUES(1, 15500)
+GO
+
+SELECT * FROM tbl_students
+
+SELECT StudentID, FirstName, Age FROM tbl_students
+
+SELECT DISTINCT GovernmentIDName
+FROM tbl_students
+
+SELECT * FROM tbl_students
+WHERE StudentID = 1
+
+SELECT * FROM tbl_students 
+WHERE GovernmentIDName = 'Drivers License'
+
+SELECT * FROM tbl_students
+WHERE Age >= 26
+
+SELECT * FROM tbl_students
+WHERE GovernmentIDName = 'SSSID' 
+AND StudentID = 3 
+
+SELECT * FROM tbl_students
+WHERE GovernmentIDName = 'Drivers License'
+OR StudentID = 4
+
+SELECT * FROM tbl_students
+WHERE FirstName = 'LeBron'
+AND Age >= 30 OR GovernmentIDName = 'SSSID'
+
+SELECT * FROM tbl_students
+WHERE StudentID != 2
+
+SELECT * FROM tbl_students
+ORDER by DateCreated DESC
+
+SELECT * FROM tbl_students
+WHERE CreatedBy is null
+
+SELECT * FROM tbl_students
+WHERE FirstName = 'LeBron'
+
+UPDATE tbl_students
+SET age = 35, MiddleName = 'Narciso'
+WHERE StudentID = 2 
+
+SELECT * FROM tbl_students
+WHERE GovernmentID = 647445533
+
+DELETE FROM tbl_students
+WHERE GovernmentID = 647445533
+
+SELECT TOP 100 * FROM tbl_students
+SELECT * FROM tbl_enrollment
+
+SELECT MIN(Age) AS MinAge FROM tbl_students
+SELECT MAX(Age) AS MaxAGE FROM tbl_students
+SELECT AVG(Payment) AS AvePayment FROM tbl_enrollment
+SELECT SUM(Payment) AS SumPayment FROM tbl_enrollment
+SELECT COUNT(*) AS CountRows FROM tbl_students
+
+SELECT * FROM tbl_students
+WHERE LastName like '%n'
+GO
+
+SELECT * FROM tbl_students
+WHERE FirstName IN ('LeBron', 'Kevin', 'Durant')
+GO
+
+SELECT * FROM tbl_students
+WHERE Age BETWEEN 18 and 36
+GO
+
+SELECT StudentID as Student_ID, LastName as StudentLastName
+FROM tbl_students
+GO
+
+SELECT * FROM tbl_enrollment
+SELECT * FROM tbl_students
+
+SELECT a.StudentID, a.FirstName, a.LastName, b.Payment, b.EnrolledDate
+FROM tbl_students a 
+INNER JOIN tbl_enrollment b 
+ON a.StudentID = b.StudentID
+WHERE age >= 25
+
+SELECT a.StudentID, a.FirstName, a.LastName, b.Payment, b.EnrolledDate
+FROM tbl_students a
+LEFT JOIN tbl_enrollment b
+ON a.StudentID = b.StudentID
+
+ALTER TABLE tbl_student drop column createdby
+GO
+SELECT * FROM tbl_students
+GO
+
+
+
+
+
+	

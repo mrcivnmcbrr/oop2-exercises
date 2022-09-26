@@ -1,0 +1,53 @@
+Introduction: 
+-A POS keeps track of the sales of a company or store.
+-a point-of-sale system refers to the cash registers at a supermarket, convience store, etc.
+-allows bussinesses to accept payments for products or services from customers that is offered by the company.
+-today, POS systems are digital, transactions can happen without being in the store. It only needs an POSapp and an internet-enabled device, like a phone or tablet.
+
+
+Problem Statement:
+-POS systems are prone to being hacked
+	-Hacker detection is a crucial component of keeping your POS system and customers’ credit card information secure. Make sure to purchase a POS system that includes hacker detection. One breach of personal data is all it takes to ruin a business. Don’t let some greedy hacker destroy the company you’ve built because you opted for a cheaper system that did not offer hacker detection and security measures.
+
+-Innacurate tracks or reports of the system 
+	-One of the main benefits of switching to a digital POS system is the breadth of reporting analytics at your fingertips. However, if the data you are collecting doesn’t add up, that could mean there’s a flaw in the system you’ve purchased. A reliable POS system is worth the investment when it works accurately. Don’t skimp on quality for a low price and always do your research before investing in a new POS system.
+
+-Software problems and technical problems in the register.
+	-Buying a tablet and enabling it with an off-the-shelf POS system is certainly one way to upgrade your business. However, these products are often not suited to your business and could experience technical issues when you’re at your busiest. The best way to avoid these software problems is to research the best POS systems customized to your business needs. Yes, an off-the-shelf solution that you can buy at ‘big-box’ stores might be less expensive, but it may ultimately end up costing you more in the future.
+
+-POS fails to track on sales and promotions of products and services.
+	-Another reason to upgrade to a new POS system is for optimal tracking and reporting on sales and promotions. However, some point-of-sale systems fail to do this properly, and if bad analytics are hurting your business, you need to speak with a POS professional about upgrading your system to one that meets your needs. Promotions are a must for any retailer and your POS system should not have any issues handling sales, coupons and other daily discounts.
+
+-Old POS systems are not compatible to mobile phones or tablets
+
+
+
+
+
+
+introduction
+-dont mention internet
+
+problem statements
+-remove prone to hackers
+-focus on point of sale (bullet 3)
+	-eliminate manual process transaction
+
+*kung ano yung problem statement, dapat may solution sa business requirement*
+
+objectives
+-fix business requirements (business analyst)
+	-product
+	-price
+	-inventory
+
+for case diagram
+-remove customer information
+	-cashier - manage point of sales
+-replace summary reports to receipts
+
+case diagram
+-add admin in conceptual diagram
+
+prototype
+-dapat kung ano yung design yun na yung interface

@@ -1,0 +1,10 @@
+C:\Users\User\Desktop\School Thing\2nd year\2nd Sem\IT205\Programs\Cabrera_Registration Prototype\bin\Debug\Cabrera_Registration Prototype.exe.config
+C:\Users\User\Desktop\School Thing\2nd year\2nd Sem\IT205\Programs\Cabrera_Registration Prototype\bin\Debug\Cabrera_Registration Prototype.exe
+C:\Users\User\Desktop\School Thing\2nd year\2nd Sem\IT205\Programs\Cabrera_Registration Prototype\bin\Debug\Cabrera_Registration Prototype.pdb
+C:\Users\User\Desktop\School Thing\2nd year\2nd Sem\IT205\Programs\Cabrera_Registration Prototype\obj\Debug\Cabrera_Registration Prototype.csprojAssemblyReference.cache
+C:\Users\User\Desktop\School Thing\2nd year\2nd Sem\IT205\Programs\Cabrera_Registration Prototype\obj\Debug\Cabrera_Registration_Prototype.regproMainForm.resources
+C:\Users\User\Desktop\School Thing\2nd year\2nd Sem\IT205\Programs\Cabrera_Registration Prototype\obj\Debug\Cabrera_Registration_Prototype.Properties.Resources.resources
+C:\Users\User\Desktop\School Thing\2nd year\2nd Sem\IT205\Programs\Cabrera_Registration Prototype\obj\Debug\Cabrera_Registration Prototype.csproj.GenerateResource.cache
+C:\Users\User\Desktop\School Thing\2nd year\2nd Sem\IT205\Programs\Cabrera_Registration Prototype\obj\Debug\Cabrera_Registration Prototype.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\School Thing\2nd year\2nd Sem\IT205\Programs\Cabrera_Registration Prototype\obj\Debug\Cabrera_Registration Prototype.exe
+C:\Users\User\Desktop\School Thing\2nd year\2nd Sem\IT205\Programs\Cabrera_Registration Prototype\obj\Debug\Cabrera_Registration Prototype.pdb

@@ -1,0 +1,69 @@
+ string userName, password;
+            userName = txtUsername.Text;
+            password = txtpassword.Text;
+
+            if (userName == "" && password == "")
+            {
+                MessageBox.Show("Please Enter Login and Password");
+            }
+            else
+            {
+                string stringConn = "Data Source=CABRERAAAWR\\CABSSERVER;Initial Catalog=RccPOSdev;Integrated Security=True";
+                SqlConnection log = new SqlConnection(stringConn);
+                log.Open();
+                SqlCommand cmd = new SqlCommand();
+                string query = "RccPOSLogin";
+                cmd = new SqlCommand(query, log);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@UserName", userName);
+                cmd.Parameters.AddWithValue("@Password", password);
+                int empAccount = (Int32)cmd.ExecuteScalar();
+                {
+                    if (empAccount == 4)
+                    {
+                        this.Hide();
+                        frmAdminWindow admin = new frmAdminWindow();
+
+                        admin.Show();
+                    }
+                    else if (empAccount == 5)
+                    {
+                        this.Hide();
+                        frmCashier cashy = new frmCashier();
+                        cashy.Show();
+                    }
+                    else if (empAccount == 6)
+                    {
+                        this.Hide();
+                        frmCashier casher = new frmCashier();
+                        casher.Show();
+                    }
+                    else
+                    { 
+                        MessageBox.Show("Login ID or Password is wrong");
+                        txtUsername.Clear();
+                        txtpassword.Clear();
+                        txtUsername.Focus();
+                    }
+
+
+
+
+
+
+
+1. admin log in
+
+2. dashboard
+-inventory
+	-output inventory
+-store branches
+	-output branches
+	-admin can add branches
+		-branch location
+		-branch manager
+-point of sales
+
+
+-create dummy datagrid branches
+-create dummy
