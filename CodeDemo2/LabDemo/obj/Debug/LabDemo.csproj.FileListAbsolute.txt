@@ -1,0 +1,14 @@
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\LabDemo\LabDemo\bin\Debug\LabDemo.exe.config
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\LabDemo\LabDemo\bin\Debug\LabDemo.exe
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\LabDemo\LabDemo\bin\Debug\LabDemo.pdb
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\LabDemo\LabDemo\obj\Debug\LabDemo.csprojResolveAssemblyReference.cache
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\LabDemo\LabDemo\obj\Debug\LabDemo.Properties.Resources.resources
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\LabDemo\LabDemo\obj\Debug\LabDemo.csproj.GenerateResource.Cache
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\LabDemo\LabDemo\obj\Debug\LabDemo.exe
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\LabDemo\LabDemo\obj\Debug\LabDemo.pdb
+c:\users\ivy joy carawana\documents\visual studio 2015\Projects\LabDemo\LabDemo\obj\Debug\LabDemo.frmHome.resources
+C:\Users\Ivy Joy Carawana\Documents\Visual Studio 2015\Projects\LabDemo\LabDemo\obj\Debug\LabDemo.frmTicket.resources
+C:\Users\Ivy Joy Carawana\Documents\Visual Studio 2015\Projects\LabDemo\LabDemo\obj\Debug\LabDemo.frmCheckRoutecs.resources
+C:\Users\User\Desktop\School Thing\2nd year\2nd Sem\IT205\Programs\CodeDemo2\LabDemo\bin\Debug\LabDemo.exe.config
+C:\Users\User\Desktop\School Thing\2nd year\2nd Sem\IT205\Programs\CodeDemo2\LabDemo\obj\Debug\LabDemo.exe
+C:\Users\User\Desktop\School Thing\2nd year\2nd Sem\IT205\Programs\CodeDemo2\LabDemo\obj\Debug\LabDemo.pdb
